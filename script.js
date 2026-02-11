@@ -1,93 +1,27 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, sans-serif;
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const popup = document.getElementById("popup");
+
+// телепорт кнопки НЕТ
+function teleportButton() {
+  const btnWidth = noBtn.offsetWidth;
+  const btnHeight = noBtn.offsetHeight;
+
+  const maxX = window.innerWidth - btnWidth;
+  const maxY = window.innerHeight - btnHeight;
+
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  noBtn.style.position = "fixed";
+  noBtn.style.left = randomX + "px";
+  noBtn.style.top = randomY + "px";
 }
 
-body {
-  height: 100vh;
-  background: #071826;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  overflow: hidden;
-}
+noBtn.addEventListener("mouseover", teleportButton);
+noBtn.addEventListener("touchstart", teleportButton);
 
-.container {
-  text-align: center;
-  padding: 20px;
-  width: 100%;
-  max-width: 500px;
-}
-
-h1 {
-  font-size: clamp(22px, 6vw, 36px);
-  margin-bottom: 40px;
-}
-
-.buttons {
-  position: relative;
-  height: 200px;
-}
-
-button {
-  padding: 16px 28px;
-  border: none;
-  border-radius: 14px;
-  font-size: clamp(16px, 4vw, 20px);
-  cursor: pointer;
-  position: absolute;
-  white-space: nowrap;
-}
-
-.yes {
-  background: #ff4d6d;
-  color: white;
-  left: 20%;
-}
-
-.no {
-  background: #1f3c5a;
-  color: white;
-  right: 20%;
-}
-
-/* POPUP */
-
-.popup {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.popup-content {
-  background: white;
-  color: black;
-  padding: 20px;
-  border-radius: 18px;
-  text-align: center;
-  max-width: 320px;
-  width: 100%;
-  animation: scaleIn 0.3s ease;
-}
-
-.popup-content img {
-  width: 100%;
-  border-radius: 14px;
-  margin-bottom: 16px;
-}
-
-.popup-content h2 {
-  margin-bottom: 8px;
-}
-
-@keyframes scaleIn {
-  from { transform: scale(0.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
+// ПОКАЗ POPUP при нажатии ДА
+yesBtn.addEventListener("click", () => {
+  popup.style.display = "flex";
+});
