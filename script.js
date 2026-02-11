@@ -19,15 +19,13 @@ function teleportButton() {
   noBtn.style.top = randomY + "px";
 }
 
-function closePopupClick() {
-  popup.style.display = "none";
-}
-
 noBtn.addEventListener("mouseover", teleportButton);
 noBtn.addEventListener("touchstart", teleportButton);
-closePopup.addEventListener("touchstart", closePopupClick);
 
 // ПОКАЗ POPUP при нажатии ДА
 yesBtn.addEventListener("click", () => {
   popup.style.display = "flex";
+});
+yesBtn.addEventListener("click", () => {
+  popup.style.display = "none";
 });
