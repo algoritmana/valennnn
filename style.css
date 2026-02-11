@@ -32,7 +32,6 @@ h1 {
   display: flex;
   justify-content: flex-start;
   gap: 20px;
-  height: 200px;
 }
 
 button {
@@ -47,13 +46,11 @@ button {
 .yes {
   background: #ff4d6d;
   color: white;
-  left: 20%;
 }
 
 .no {
   background: #1f3c5a;
   color: white;
-  right: 20%;
 }
 
 /* POPUP */
