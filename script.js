@@ -26,6 +26,6 @@ noBtn.addEventListener("touchstart", teleportButton);
 yesBtn.addEventListener("click", () => {
   popup.style.display = "flex";
 });
-yesBtn.addEventListener("click", () => {
+closePopup.addEventListener("click", () => {
   popup.style.display = "none";
 });
