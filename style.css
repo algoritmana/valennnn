@@ -29,6 +29,9 @@ h1 {
 
 .buttons {
   position: relative;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
   height: 200px;
 }
 
@@ -38,7 +41,6 @@ button {
   border-radius: 14px;
   font-size: clamp(16px, 4vw, 20px);
   cursor: pointer;
-  position: absolute;
   white-space: nowrap;
 }
 
