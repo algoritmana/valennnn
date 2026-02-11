@@ -30,9 +30,8 @@ h1 {
 .buttons {
   position: relative;
   display: flex;
-  justify-content: flex-start;
-  gap: 20px;
-  width: fit-content;
+  justify-content: space-between;
+  width: 200px;
   margin: 0 auto;
 }
 
