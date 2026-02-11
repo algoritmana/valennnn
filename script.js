@@ -1,6 +1,7 @@
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 const popup = document.getElementById("popup");
+const closePopup = documeny.getElementById("popupClose");
 
 // телепорт кнопки НЕТ
 function teleportButton() {
@@ -18,8 +19,13 @@ function teleportButton() {
   noBtn.style.top = randomY + "px";
 }
 
+function closePopupClick() {
+  popup.style.display = "none";
+}
+
 noBtn.addEventListener("mouseover", teleportButton);
 noBtn.addEventListener("touchstart", teleportButton);
+closePopup.addEventListener("touchstart", closePopupClick);
 
 // ПОКАЗ POPUP при нажатии ДА
 yesBtn.addEventListener("click", () => {
