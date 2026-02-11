@@ -1,7 +1,7 @@
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 const popup = document.getElementById("popup");
-const closePopup = documeny.getElementById("popupClose");
+const closePopup = document.getElementById("popupClose");
 
 // телепорт кнопки НЕТ
 function teleportButton() {
