@@ -20,7 +20,6 @@ function teleportButton() {
   noBtn.style.left = randomX + "px";
   noBtn.style.top = randomY + "px";
 
-  // увеличивается кнопка ДА
   yesScale += 0.12;
   yesBtn.style.transform = `scale(${yesScale})`;
 }
@@ -29,22 +28,20 @@ noBtn.addEventListener("mouseover", teleportButton);
 noBtn.addEventListener("touchstart", teleportButton);
 
 
-// конфетти из твоих сердечек
+// конфетти из твоего heart1
 
 const heartImages = [
-  "images/heart1.png",
-  "images/heart2.png",
-  "images/heart3.png"
+  "https://github.com/algoritmana/valennnn/blob/main/heart1.png?raw=true"
 ];
 
 function createHeart() {
   const heart = document.createElement("img");
-  heart.src = heartImages[Math.floor(Math.random() * heartImages.length)];
+  heart.src = heartImages[0];
   heart.classList.add("heart-confetti");
 
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDuration = 3 + Math.random() * 3 + "s";
-  heart.style.width = 20 + Math.random() * 40 + "px";
+  heart.style.width = 22 + Math.random() * 38 + "px";
 
   document.body.appendChild(heart);
 
