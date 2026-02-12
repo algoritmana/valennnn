@@ -67,7 +67,7 @@ button {
 }
 
 .no {
-  background: #d8cfc0;
+  background: #e7dfd2;
   color: #620107;
 }
 
@@ -83,12 +83,14 @@ button {
   padding: 20px;
 }
 
+/* ВОТ ТУТ ОН ТЕПЕРЬ КРАСНЫЙ */
+
 .popup-content {
   position: relative;
-  background: #DFD9CD;
-  color: #620107;
-  padding: 20px;
-  border-radius: 18px;
+  background: #620107;
+  color: #DFD9CD;
+  padding: 22px;
+  border-radius: 20px;
   text-align: center;
   max-width: 320px;
   width: 100%;
@@ -98,7 +100,7 @@ button {
 .popup-content img {
   width: 100%;
   border-radius: 14px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .popup-close {
@@ -107,6 +109,7 @@ button {
   right: 16px;
   font-size: 26px;
   cursor: pointer;
+  color: #DFD9CD;
 }
 
 @keyframes scaleIn {
@@ -114,7 +117,7 @@ button {
   to { transform: scale(1); opacity: 1; }
 }
 
-/* сердечки конфетти */
+/* конфетти */
 
 .heart-confetti {
   position: fixed;
