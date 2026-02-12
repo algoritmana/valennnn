@@ -20,7 +20,7 @@ body {
 .cupid {
   position: absolute;
   top: 40px;
-  width: 120px;
+  width: 240px;
   animation: floatCupid 4s ease-in-out infinite;
 }
 
@@ -67,8 +67,8 @@ button {
 }
 
 .no {
-  background: #e7dfd2;
-  color: #620107;
+  background: #620107;
+  color: #DFD9CD;
 }
 
 /* POPUP */
