@@ -80,6 +80,10 @@ yesBtn.addEventListener("click", () => {
     startConfetti();
   }, 500);
 });
+closePopup.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
 const floatingHeartImg = "https://github.com/algoritmana/valennnn/blob/main/heart1.png?raw=true";
 
 function createFloatingHeart() {
