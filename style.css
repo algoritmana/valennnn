@@ -135,3 +135,30 @@ button {
     opacity: 0.9;
   }
 }
+
+/* плавающие сердечки внизу */
+
+.floating-hearts {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -20px;
+  animation: floatUp linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-120vh);
+  }
+}
