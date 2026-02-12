@@ -1,4 +1,8 @@
 const floatingHeartsContainer = document.getElementById("floatingHearts");
+
+let floatingInterval;
+let floatingStopped = false;
+const floatingHeartsContainer = document.getElementById("floatingHearts");
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 const popup = document.getElementById("popup");
@@ -63,17 +67,21 @@ function startConfetti() {
 yesBtn.addEventListener("click", () => {
   popup.style.display = "flex";
 
-  // убираем фоновые сердечки
-  floatingHeartsContainer.innerHTML = "";
+  // останавливаем новые сердечки снизу
+  floatingStopped = true;
+  clearInterval(floatingInterval);
 
-  // запускаем конфетти
-  startConfetti();
+  // те что летят — доживают
+  // новые больше не появляются
+
+  // резкий "дождь" сверху
+  burstHeartsFromTop();
+
+  // потом обычное конфетти
+  setTimeout(() => {
+    startConfetti();
+  }, 500);
 });
-
-closePopup.addEventListener("click", () => {
-  popup.style.display = "none";
-});
-
 const floatingHeartImg = "https://github.com/algoritmana/valennnn/blob/main/heart1.png?raw=true";
 
 function createFloatingHeart() {
@@ -94,3 +102,43 @@ function createFloatingHeart() {
 
 // создаем постоянный поток сердечек
 setInterval(createFloatingHeart, 800);
+
+const floatingHeartImg = "https://github.com/algoritmana/valennnn/blob/main/heart1.png?raw=true";
+
+function createFloatingHeart() {
+  if (floatingStopped) return;
+
+  const heart = document.createElement("img");
+  heart.src = floatingHeartImg;
+  heart.classList.add("floating-heart");
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.width = 16 + Math.random() * 26 + "px";
+  heart.style.animationDuration = 6 + Math.random() * 6 + "s";
+
+  floatingHeartsContainer.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 12000);
+}
+
+floatingInterval = setInterval(createFloatingHeart, 800);
+
+function burstHeartsFromTop() {
+  for (let i = 0; i < 45; i++) {
+    const heart = document.createElement("img");
+    heart.src = floatingHeartImg;
+    heart.classList.add("top-burst-heart");
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.width = 20 + Math.random() * 40 + "px";
+    heart.style.animationDuration = 1.5 + Math.random() * 1.5 + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 4000);
+  }
+}
