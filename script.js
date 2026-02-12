@@ -101,28 +101,6 @@ function createFloatingHeart() {
 // создаем постоянный поток сердечек
 setInterval(createFloatingHeart, 800);
 
-const floatingHeartImg = "https://github.com/algoritmana/valennnn/blob/main/heart1.png?raw=true";
-
-function createFloatingHeart() {
-  if (floatingStopped) return;
-
-  const heart = document.createElement("img");
-  heart.src = floatingHeartImg;
-  heart.classList.add("floating-heart");
-
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.width = 16 + Math.random() * 26 + "px";
-  heart.style.animationDuration = 6 + Math.random() * 6 + "s";
-
-  floatingHeartsContainer.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 12000);
-}
-
-floatingInterval = setInterval(createFloatingHeart, 800);
-
 function burstHeartsFromTop() {
   for (let i = 0; i < 45; i++) {
     const heart = document.createElement("img");
