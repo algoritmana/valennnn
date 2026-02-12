@@ -162,3 +162,46 @@ button {
     transform: translateY(-120vh);
   }
 }
+
+/* слой фоновых сердечек */
+
+.floating-hearts {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -20px;
+  animation: floatUp linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-120vh);
+  }
+}
+
+/* эффект резкого "высыпания" сверху */
+
+.top-burst-heart {
+  position: fixed;
+  top: -40px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: burstFall linear forwards;
+}
+
+@keyframes burstFall {
+  to {
+    transform: translateY(120vh) rotate(360deg);
+  }
+}
