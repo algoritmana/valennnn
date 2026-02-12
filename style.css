@@ -21,6 +21,7 @@ body {
   position: absolute;
   top: 40px;
   width: 240px;
+  transform: translteX(20px);
   animation: floatCupid 4s ease-in-out infinite;
 }
 
@@ -59,6 +60,7 @@ button {
   cursor: pointer;
   white-space: nowrap;
   transition: transform .25s ease;
+  z-index: 2;
 }
 
 .yes {
@@ -81,6 +83,7 @@ button {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  z-index: 2;
 }
 
 /* ВОТ ТУТ ОН ТЕПЕРЬ КРАСНЫЙ */
