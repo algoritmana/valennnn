@@ -1,5 +1,3 @@
-const floatingHeartsContainer = document.getElementById("floatingHearts");
-
 let floatingInterval;
 let floatingStopped = false;
 const floatingHeartsContainer = document.getElementById("floatingHearts");
