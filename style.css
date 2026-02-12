@@ -95,7 +95,7 @@ button {
   max-width: 320px;
   width: 100%;
   animation: scaleIn 0.35s ease;
-  z-index: 1;
+  z-index: 2;
 }
 
 .popup-content img {
@@ -126,7 +126,7 @@ button {
   pointer-events: none;
   z-index: 9999;
   animation: fall linear forwards;
-  z-index: 2;
+  z-index: 1;
 }
 
 @keyframes fall {
