@@ -95,17 +95,22 @@ function createFloatingHeart() {
 
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.width = 16 + Math.random() * 26 + "px";
-  heart.style.animationDuration = 6 + Math.random() * 6 + "s";
+  heart.style.animationDuration = 3 + Math.random() * 6 + "s";
 
   floatingHeartsContainer.appendChild(heart);
 
   setTimeout(() => {
     heart.remove();
-  }, 16000);
+  }, 12000);
 }
 
 // создаем постоянный поток сердечек
-setInterval(createFloatingHeart, 800);
+const heartTimeout = setTimeout(() => {
+  createFloatingHeart();
+  if (!floatingStopped) {
+    heartTimeout()
+  }
+}, 800);
 
 function burstHeartsFromTop() {
   for (let i = 0; i < 45; i++) {
