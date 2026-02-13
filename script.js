@@ -67,6 +67,11 @@ yesBtn.addEventListener("click", () => {
 
   // останавливаем новые сердечки снизу
   floatingStopped = true;
+  floatingHeartsContainer.style.display = "none";
+  noBtn.style.display = "none";
+  yesBtn.style.display = "none";
+  yesBtn.style.transform = "scale(1)";
+  noBtn.style.position = "static";
   clearInterval(floatingInterval);
 
   // те что летят — доживают
@@ -109,11 +114,6 @@ setTimeout(function heartTimeout() {
   createFloatingHeart();
   if (!floatingStopped) {
     setTimeout(() => heartTimeout(), 800);
-  } else {
-    floatingHeartsContainer.style.display = "none";
-    noBtn.style.display = "none";
-    yesBtn.style.display = "none";
-    yesBtn.style.transform = "scale(1)";
   }
 }, 800);
 
