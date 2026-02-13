@@ -21,14 +21,14 @@ body {
   position: absolute;
   top: 40px;
   width: 240px;
-  transform: translte(0,30px);
+  transform: translte(30px,0);
   animation: floatCupid 4s ease-in-out infinite;
 }
 
 @keyframes floatCupid {
-  0% { transform: translate(0px,30px); }
-  50% { transform: translate(10px,30px); }
-  100% { transform: translate(0px,30px); }
+  0% { transform: translate(30px,0px); }
+  50% { transform: translate(30px,10px); }
+  100% { transform: translate(30px,0px); }
 }
 
 .container {
