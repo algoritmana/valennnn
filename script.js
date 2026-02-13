@@ -82,6 +82,8 @@ yesBtn.addEventListener("click", () => {
 });
 closePopup.addEventListener("click", () => {
   popup.style.display = "none";
+  noBtn.style.display = "block";
+  yesBtn.style.display = "block";
 });
 
 const floatingHeartImg = "https://github.com/algoritmana/valennnn/blob/main/heart1.png?raw=true";
@@ -93,13 +95,13 @@ function createFloatingHeart() {
 
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.width = 16 + Math.random() * 26 + "px";
-  heart.style.animationDuration = 3 + Math.random() * 6 + "s";
+  heart.style.animationDuration = 6 + Math.random() * 6 + "s";
 
   floatingHeartsContainer.appendChild(heart);
 
   setTimeout(() => {
     heart.remove();
-  }, 12000);
+  }, 16000);
 }
 
 // создаем постоянный поток сердечек
@@ -107,6 +109,11 @@ setTimeout(function heartTimeout() {
   createFloatingHeart();
   if (!floatingStopped) {
     setTimeout(() => heartTimeout(), 800);
+  } else {
+    floatingHeartsContainer.style.display = "none";
+    noBtn.style.display = "none";
+    yesBtn.style.display = "none";
+    yesBtn.style.transform = "scale(1)";
   }
 }, 800);
 
