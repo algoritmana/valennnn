@@ -87,8 +87,6 @@ closePopup.addEventListener("click", () => {
 const floatingHeartImg = "https://github.com/algoritmana/valennnn/blob/main/heart1.png?raw=true";
 
 function createFloatingHeart() {
-  if (floatingStopped) return;
-
   const heart = document.createElement("img");
   heart.src = floatingHeartImg;
   heart.classList.add("floating-heart");
@@ -105,10 +103,10 @@ function createFloatingHeart() {
 }
 
 // создаем постоянный поток сердечек
-const heartTimeout = setTimeout(() => {
+setTimeout(function heartTimeout() {
   createFloatingHeart();
   if (!floatingStopped) {
-    heartTimeout()
+    setTimeout(() => heartTimeout(), 800);
   }
 }, 800);
 
